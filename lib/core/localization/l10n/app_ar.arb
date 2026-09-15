@@ -1,0 +1,14 @@
+{
+  "@@locale": "ar",
+  "appTitle": "ون سبورت",
+  "language": "اللغة",
+  "english": "الإنجليزية",
+  "arabic": "العربية",
+  "changeLanguage": "تغيير اللغة",
+  "retry": "إعادة المحاولة",
+  "confirm": "تأكيد",
+  "cancel": "إلغاء",
+  "errorOccurred": "حدث خطأ ما",
+  "noInternetConnection": "لا يوجد اتصال بالإنترنت"
+}
+
