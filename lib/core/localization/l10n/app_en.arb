@@ -20,6 +20,15 @@
   "@changeLanguage": {
     "description": "Change language button or header"
   },
+  "switchToDark": "Switch to Dark",
+  "@switchToDark": {
+    "description": "Change theme to dark mode"
+  },
+  "switchToLight": "Switch to Light",
+  "@switchToLight": {
+    "description": "Change theme to light mode"
+  },
+  
   "retry": "Retry",
   "@retry": {
     "description": "Retry action button"
@@ -39,6 +48,73 @@
   "noInternetConnection": "No internet connection",
   "@noInternetConnection": {
     "description": "No internet connection message"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login button or title"
+  },
+  "welcomeBack": "Welcome Back!",
+  "@welcomeBack": {
+    "description": "Welcome back header"
+  },
+  "loginSubtitle": "Sign in to continue to One Support",
+  "@loginSubtitle": {
+    "description": "Login subtitle description"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email field label"
+  },
+  "emailHint": "Enter your email",
+  "@emailHint": {
+    "description": "Email field placeholder"
+  },
+  "emailRequired": "Email is required",
+  "@emailRequired": {
+    "description": "Validation error for empty email"
+  },
+  "invalidEmail": "Please enter a valid email address",
+  "@invalidEmail": {
+    "description": "Validation error for invalid email"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password field label"
+  },
+  "passwordHint": "Enter your password",
+  "@passwordHint": {
+    "description": "Password field placeholder"
+  },
+  "passwordRequired": "Password is required",
+  "@passwordRequired": {
+    "description": "Validation error for empty password"
+  },
+  "passwordTooShort": "Password must be at least 6 characters",
+  "@passwordTooShort": {
+    "description": "Validation error for short password"
+  },
+  "rememberMe": "Remember Me",
+  "@rememberMe": {
+    "description": "Remember me checkbox label"
+  },
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {
+    "description": "Forgot password button label"
+  },
+  "dontHaveAccount": "Don't have an account?",
+  "@dontHaveAccount": {
+    "description": "Text prompting unregistered users"
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "Sign up link label"
+  },
+  "loginSuccess": "Logged in successfully",
+  "@loginSuccess": {
+    "description": "Success message on login"
+  },
+  "loginFailed": "Login failed",
+  "@loginFailed": {
+    "description": "Error message when login fails"
   }
 }
-

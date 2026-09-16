@@ -128,6 +128,18 @@ abstract class AppLocalizations {
   /// **'Change Language'**
   String get changeLanguage;
 
+  /// Change theme to dark mode
+  ///
+  /// In en, this message translates to:
+  /// **'Switch to Dark'**
+  String get switchToDark;
+
+  /// Change theme to light mode
+  ///
+  /// In en, this message translates to:
+  /// **'Switch to Light'**
+  String get switchToLight;
+
   /// Retry action button
   ///
   /// In en, this message translates to:
@@ -157,6 +169,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No internet connection'**
   String get noInternetConnection;
+
+  /// Login button or title
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// Welcome back header
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Back!'**
+  String get welcomeBack;
+
+  /// Login subtitle description
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to continue to One Support'**
+  String get loginSubtitle;
+
+  /// Email field label
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// Email field placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get emailHint;
+
+  /// Validation error for empty email
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get emailRequired;
+
+  /// Validation error for invalid email
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email address'**
+  String get invalidEmail;
+
+  /// Password field label
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// Password field placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password'**
+  String get passwordHint;
+
+  /// Validation error for empty password
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get passwordRequired;
+
+  /// Validation error for short password
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get passwordTooShort;
+
+  /// Remember me checkbox label
+  ///
+  /// In en, this message translates to:
+  /// **'Remember Me'**
+  String get rememberMe;
+
+  /// Forgot password button label
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get forgotPassword;
+
+  /// Text prompting unregistered users
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get dontHaveAccount;
+
+  /// Sign up link label
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get signUp;
+
+  /// Success message on login
+  ///
+  /// In en, this message translates to:
+  /// **'Logged in successfully'**
+  String get loginSuccess;
+
+  /// Error message when login fails
+  ///
+  /// In en, this message translates to:
+  /// **'Login failed'**
+  String get loginFailed;
 }
 
 class _AppLocalizationsDelegate

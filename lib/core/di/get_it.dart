@@ -12,6 +12,10 @@ import '../storage/preferences/preferences_service_impl.dart';
 import '../storage/secure_storage/secure_storage_service.dart';
 import '../storage/secure_storage/secure_storage_service_impl.dart';
 import '../theme/cubit/theme_cubit.dart';
+import '../../features/auth/login/data/datasource/login_api_service.dart';
+import '../../features/auth/login/data/datasource/login_remote_data_source.dart';
+import '../../features/auth/login/data/repository/login_repository.dart';
+import '../../features/auth/login/presentation/cubit/login_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -25,7 +29,6 @@ Future<void> init() async {
   const secureStorage = FlutterSecureStorage(
     aOptions: AndroidOptions(),
     iOptions: IOSOptions(accessibility: KeychainAccessibility.first_unlock),
-    
   );
   getIt.registerLazySingleton<FlutterSecureStorage>(() => secureStorage);
   getIt.registerLazySingleton<SecureStorageService>(
@@ -44,11 +47,29 @@ Future<void> init() async {
   await cacheService.init();
   getIt.registerLazySingleton<CacheService>(() => cacheService);
 
-  // Localization
+  // Localization & Theme
   getIt.registerLazySingleton<LocalizationCubit>(
     () => LocalizationCubit(preferencesService: getIt<PreferencesService>()),
   );
   getIt.registerLazySingleton<ThemeCubit>(
     () => ThemeCubit(preferencesService: getIt<PreferencesService>()),
+  );
+
+  // Auth - Login
+  getIt.registerLazySingleton<LoginApiService>(
+    () => LoginApiService(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<LoginRemoteDataSource>(
+    () => LoginRemoteDataSource(getIt<LoginApiService>()),
+  );
+  getIt.registerLazySingleton<LoginRepository>(
+    () => LoginRepository(getIt<LoginRemoteDataSource>()),
+  );
+  getIt.registerFactory<LoginCubit>(
+    () => LoginCubit(
+      getIt<LoginRepository>(),
+      getIt<SecureStorageService>(),
+      getIt<PreferencesService>(),
+    ),
   );
 }

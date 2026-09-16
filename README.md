@@ -1,16 +1,20 @@
-# one_support
+# One Support
 
-A new Flutter project.
+One Support is a Flutter-based customer support application that helps users report issues and receive assistance from dedicated support agents.
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+The application allows users to:
 
-A few resources to get you started if this is your first Flutter project:
+- Create a new account or sign in securely.
+- Submit support tickets describing their issues.
+- Get assigned to a support agent who will help resolve their problem.
+- Track the status and activity history of their support tickets.
+- View updates, replies, and actions performed on their tickets.
+- Browse previously submitted issues and their solutions, helping users find answers to similar problems without creating a new ticket.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Goal
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The goal of One Support is to provide a simple, organized, and user-friendly platform for managing customer support requests while making existing solutions easily accessible to everyone.
+
+> **Note:** This project is currently under active development.
