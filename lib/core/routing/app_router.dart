@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/auth/login/presentation/pages/login_page.dart';
+import '../../features/auth/register/presentation/pages/register_page.dart';
 import 'app_routes.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -17,10 +18,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.register,
-      builder: (context, state) => Scaffold(
-        appBar: AppBar(title: const Text('Register')),
-        body: const Center(child: Text('Register Page')),
-      ),
+      builder: (context, state) => const RegisterPage(),
     ),
     GoRoute(
       path: AppRoutes.home,

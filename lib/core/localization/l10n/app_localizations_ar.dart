@@ -94,4 +94,58 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get loginFailed => 'فشل تسجيل الدخول';
+
+  @override
+  String get createAccount => 'إنشاء حساب جديد';
+
+  @override
+  String get registerSubtitle => 'أنشئ حسابك للبدء مع ون سبورت';
+
+  @override
+  String get userName => 'الاسم بالكامل';
+
+  @override
+  String get userNameHint => 'أدخل اسمك بالكامل';
+
+  @override
+  String get userNameRequired => 'الاسم مطلوب';
+
+  @override
+  String get userNameTooShort => 'الاسم يجب أن يكون 3 أحرف على الأقل';
+
+  @override
+  String get phone => 'رقم الهاتف';
+
+  @override
+  String get phoneHint => 'أدخل رقم الهاتف';
+
+  @override
+  String get phoneRequired => 'رقم الهاتف مطلوب';
+
+  @override
+  String get invalidPhone => 'يرجى إدخال رقم هاتف صالح';
+
+  @override
+  String get confirmPassword => 'تأكيد كلمة المرور';
+
+  @override
+  String get confirmPasswordHint => 'أعد إدخال كلمة المرور';
+
+  @override
+  String get confirmPasswordRequired => 'يرجى تأكيد كلمة المرور';
+
+  @override
+  String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
+
+  @override
+  String get alreadyHaveAccount => 'لديك حساب بالفعل؟';
+
+  @override
+  String get signIn => 'تسجيل الدخول';
+
+  @override
+  String get registerSuccess => 'تم إنشاء الحساب بنجاح';
+
+  @override
+  String get registerFailed => 'فشل إنشاء الحساب';
 }

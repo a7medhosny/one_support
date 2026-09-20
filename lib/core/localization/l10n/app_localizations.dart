@@ -271,6 +271,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login failed'**
   String get loginFailed;
+
+  /// Create Account header or button
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createAccount;
+
+  /// Register subtitle description
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up to get started with One Support'**
+  String get registerSubtitle;
+
+  /// User name / Full name label
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get userName;
+
+  /// User name field placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your full name'**
+  String get userNameHint;
+
+  /// Validation error for empty user name
+  ///
+  /// In en, this message translates to:
+  /// **'Name is required'**
+  String get userNameRequired;
+
+  /// Validation error for short user name
+  ///
+  /// In en, this message translates to:
+  /// **'Name must be at least 3 characters'**
+  String get userNameTooShort;
+
+  /// Phone number field label
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phone;
+
+  /// Phone number field placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get phoneHint;
+
+  /// Validation error for empty phone number
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number is required'**
+  String get phoneRequired;
+
+  /// Validation error for invalid phone number
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid phone number'**
+  String get invalidPhone;
+
+  /// Confirm password field label
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPassword;
+
+  /// Confirm password field placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'Re-enter your password'**
+  String get confirmPasswordHint;
+
+  /// Validation error for empty confirm password
+  ///
+  /// In en, this message translates to:
+  /// **'Please confirm your password'**
+  String get confirmPasswordRequired;
+
+  /// Validation error when passwords do not match
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsDoNotMatch;
+
+  /// Already have an account text
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyHaveAccount;
+
+  /// Sign in text button
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signIn;
+
+  /// Success message on register
+  ///
+  /// In en, this message translates to:
+  /// **'Account created successfully'**
+  String get registerSuccess;
+
+  /// Error message when registration fails
+  ///
+  /// In en, this message translates to:
+  /// **'Registration failed'**
+  String get registerFailed;
 }
 
 class _AppLocalizationsDelegate

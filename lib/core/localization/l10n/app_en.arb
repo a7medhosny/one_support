@@ -28,7 +28,6 @@
   "@switchToLight": {
     "description": "Change theme to light mode"
   },
-  
   "retry": "Retry",
   "@retry": {
     "description": "Retry action button"
@@ -116,5 +115,77 @@
   "loginFailed": "Login failed",
   "@loginFailed": {
     "description": "Error message when login fails"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Create Account header or button"
+  },
+  "registerSubtitle": "Sign up to get started with One Support",
+  "@registerSubtitle": {
+    "description": "Register subtitle description"
+  },
+  "userName": "Full Name",
+  "@userName": {
+    "description": "User name / Full name label"
+  },
+  "userNameHint": "Enter your full name",
+  "@userNameHint": {
+    "description": "User name field placeholder"
+  },
+  "userNameRequired": "Name is required",
+  "@userNameRequired": {
+    "description": "Validation error for empty user name"
+  },
+  "userNameTooShort": "Name must be at least 3 characters",
+  "@userNameTooShort": {
+    "description": "Validation error for short user name"
+  },
+  "phone": "Phone Number",
+  "@phone": {
+    "description": "Phone number field label"
+  },
+  "phoneHint": "Enter your phone number",
+  "@phoneHint": {
+    "description": "Phone number field placeholder"
+  },
+  "phoneRequired": "Phone number is required",
+  "@phoneRequired": {
+    "description": "Validation error for empty phone number"
+  },
+  "invalidPhone": "Please enter a valid phone number",
+  "@invalidPhone": {
+    "description": "Validation error for invalid phone number"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Confirm password field label"
+  },
+  "confirmPasswordHint": "Re-enter your password",
+  "@confirmPasswordHint": {
+    "description": "Confirm password field placeholder"
+  },
+  "confirmPasswordRequired": "Please confirm your password",
+  "@confirmPasswordRequired": {
+    "description": "Validation error for empty confirm password"
+  },
+  "passwordsDoNotMatch": "Passwords do not match",
+  "@passwordsDoNotMatch": {
+    "description": "Validation error when passwords do not match"
+  },
+  "alreadyHaveAccount": "Already have an account?",
+  "@alreadyHaveAccount": {
+    "description": "Already have an account text"
+  },
+  "signIn": "Sign In",
+  "@signIn": {
+    "description": "Sign in text button"
+  },
+  "registerSuccess": "Account created successfully",
+  "@registerSuccess": {
+    "description": "Success message on register"
+  },
+  "registerFailed": "Registration failed",
+  "@registerFailed": {
+    "description": "Error message when registration fails"
   }
 }

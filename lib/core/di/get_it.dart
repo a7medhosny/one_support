@@ -16,6 +16,10 @@ import '../../features/auth/login/data/datasource/login_api_service.dart';
 import '../../features/auth/login/data/datasource/login_remote_data_source.dart';
 import '../../features/auth/login/data/repository/login_repository.dart';
 import '../../features/auth/login/presentation/cubit/login_cubit.dart';
+import '../../features/auth/register/data/datasources/register_api_service.dart';
+import '../../features/auth/register/data/datasources/register_remote_data_source.dart';
+import '../../features/auth/register/data/repository/register_repository.dart';
+import '../../features/auth/register/presentation/cubit/register_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -71,5 +75,19 @@ Future<void> init() async {
       getIt<SecureStorageService>(),
       getIt<PreferencesService>(),
     ),
+  );
+
+  // Auth - Register
+  getIt.registerLazySingleton<RegisterApiService>(
+    () => RegisterApiService(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<RegisterRemoteDataSource>(
+    () => RegisterRemoteDataSource(getIt<RegisterApiService>()),
+  );
+  getIt.registerLazySingleton<RegisterRepository>(
+    () => RegisterRepository(getIt<RegisterRemoteDataSource>()),
+  );
+  getIt.registerFactory<RegisterCubit>(
+    () => RegisterCubit(getIt<RegisterRepository>()),
   );
 }

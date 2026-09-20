@@ -94,4 +94,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginFailed => 'Login failed';
+
+  @override
+  String get createAccount => 'Create Account';
+
+  @override
+  String get registerSubtitle => 'Sign up to get started with One Support';
+
+  @override
+  String get userName => 'Full Name';
+
+  @override
+  String get userNameHint => 'Enter your full name';
+
+  @override
+  String get userNameRequired => 'Name is required';
+
+  @override
+  String get userNameTooShort => 'Name must be at least 3 characters';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get phoneHint => 'Enter your phone number';
+
+  @override
+  String get phoneRequired => 'Phone number is required';
+
+  @override
+  String get invalidPhone => 'Please enter a valid phone number';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get confirmPasswordHint => 'Re-enter your password';
+
+  @override
+  String get confirmPasswordRequired => 'Please confirm your password';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get signIn => 'Sign In';
+
+  @override
+  String get registerSuccess => 'Account created successfully';
+
+  @override
+  String get registerFailed => 'Registration failed';
 }
