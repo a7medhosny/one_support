@@ -3,6 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../features/splash/presentation/cubit/splash_cubit.dart';
 import '../localization/cubit/localization_cubit.dart';
 import '../networking/dio_factory.dart';
 import '../storage/cache/cache_service.dart';
@@ -67,15 +68,13 @@ Future<void> init() async {
     () => LoginRemoteDataSource(getIt<LoginApiService>()),
   );
   getIt.registerLazySingleton<LoginRepository>(
-    () => LoginRepository(getIt<LoginRemoteDataSource>()),
-  );
-  getIt.registerFactory<LoginCubit>(
-    () => LoginCubit(
-      getIt<LoginRepository>(),
+    () => LoginRepository(
+      getIt<LoginRemoteDataSource>(),
       getIt<SecureStorageService>(),
       getIt<PreferencesService>(),
     ),
   );
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt<LoginRepository>()));
 
   // Auth - Register
   getIt.registerLazySingleton<RegisterApiService>(
@@ -89,5 +88,10 @@ Future<void> init() async {
   );
   getIt.registerFactory<RegisterCubit>(
     () => RegisterCubit(getIt<RegisterRepository>()),
+  );
+
+  // Splash
+  getIt.registerFactory<SplashCubit>(
+    () => SplashCubit(getIt<LoginRepository>()),
   );
 }

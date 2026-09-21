@@ -3,15 +3,16 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/auth/login/presentation/pages/login_page.dart';
 import '../../features/auth/register/presentation/pages/register_page.dart';
+import '../../features/splash/presentation/pages/splash_page.dart';
 import 'app_routes.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.login,
+  initialLocation: AppRoutes.splash,
   routes: [
-    // GoRoute(
-    //   path: AppRoutes.splash,
-    //   builder: (context, state) => const SplashPage(),
-    // ),
+    GoRoute(
+      path: AppRoutes.splash,
+      builder: (context, state) => const SplashPage(),
+    ),
     GoRoute(
       path: AppRoutes.login,
       builder: (context, state) => const LoginPage(),

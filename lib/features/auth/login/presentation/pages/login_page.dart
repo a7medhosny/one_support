@@ -40,7 +40,8 @@ class _LoginPageContent extends StatelessWidget {
           // Theme Toggle
           BlocBuilder<ThemeCubit, ThemeState>(
             builder: (context, themeState) {
-              final isDark = themeState.themeMode == ThemeMode.dark;
+             // debugPrint('ThemeState: ${themeState.themeMode}');
+              final isDark = context.isDarkMode;
               return IconButton(
                 icon: Icon(
                   isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,

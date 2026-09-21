@@ -104,6 +104,12 @@ abstract class AppLocalizations {
   /// **'One Support'**
   String get appTitle;
 
+  /// No description provided for @appDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Your issue, our priority.'**
+  String get appDescription;
+
   /// Language label
   ///
   /// In en, this message translates to:

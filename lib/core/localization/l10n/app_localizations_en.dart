@@ -12,6 +12,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'One Support';
 
   @override
+  String get appDescription => 'Your issue, our priority.';
+
+  @override
   String get language => 'Language';
 
   @override

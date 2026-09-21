@@ -12,6 +12,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appTitle => 'ون سبورت';
 
   @override
+  String get appDescription => 'مشكلتك هي أولويتنا.';
+
+  @override
   String get language => 'اللغة';
 
   @override
