@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/helpers/spacing.dart';
-import '../../data/models/ticket_response_model.dart';
+import '../../../data/models/ticket_response_model.dart';
 import 'ticket_card.dart';
 import 'ticket_empty_state.dart';
 import 'ticket_error_state.dart';

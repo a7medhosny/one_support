@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/helpers/extensions.dart';
+import '../../../../../../core/helpers/extensions.dart';
 
 /// A sleek and modern comment input box with multiline support,
 /// dynamic submit button states, and loading indicators.

@@ -7,13 +7,13 @@ import '../../../../../core/helpers/spacing.dart';
 import '../../data/models/ticket_response_model.dart';
 import '../cubit/home_cubit.dart';
 import '../cubit/home_state.dart';
-import '../widgets/create_ticket_bottom_sheet.dart';
+import '../widgets/create_ticket_widgets/create_ticket_bottom_sheet.dart';
 import '../widgets/home_app_bar.dart';
 import '../widgets/home_bloc_listener.dart';
 import '../widgets/ticket_filters_bar.dart';
 import '../widgets/ticket_search_bar.dart';
 import '../widgets/ticket_stats_overview.dart';
-import '../widgets/tickets_list_view.dart';
+import '../widgets/tickets_list_view_widgets/tickets_list_view.dart';
 
 /// Root Page for the Home feature displaying support tickets.
 class HomePage extends StatelessWidget {

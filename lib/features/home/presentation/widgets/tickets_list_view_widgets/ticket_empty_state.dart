@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/helpers/extensions.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/widgets/app_button.dart';
+import '../../../../../../core/helpers/extensions.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/widgets/app_button.dart';
 
 /// Clean state shown when no tickets match filters or no tickets exist.
 class TicketEmptyState extends StatelessWidget {

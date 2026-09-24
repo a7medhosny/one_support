@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../../core/helpers/extensions.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../data/models/ticket_response_model.dart';
-import 'ticket_details_bottom_sheet.dart';
-import 'ticket_priority_badge.dart';
-import 'ticket_status_badge.dart';
+import '../../../../../../core/helpers/extensions.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../data/models/ticket_response_model.dart';
+import '../ticket_detailes_widgets/ticket_details_bottom_sheet.dart';
+import '../ticket_detailes_widgets/ticket_priority_badge.dart';
+import '../ticket_detailes_widgets/ticket_status_badge.dart';
 
 /// Interactive card component representing a single support ticket.
 class TicketCard extends StatelessWidget {

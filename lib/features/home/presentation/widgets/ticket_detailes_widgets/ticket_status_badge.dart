@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/helpers/extensions.dart';
+import '../../../../../../core/helpers/extensions.dart';
 
 /// Reusable badge widget to display ticket status with consistent styling.
 class TicketStatusBadge extends StatelessWidget {

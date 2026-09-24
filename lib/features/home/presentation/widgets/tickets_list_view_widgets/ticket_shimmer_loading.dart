@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/helpers/extensions.dart';
-import '../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/helpers/extensions.dart';
+import '../../../../../../core/helpers/spacing.dart';
 
 /// Placeholder skeleton loading widget for the tickets list.
 class TicketShimmerLoading extends StatefulWidget {

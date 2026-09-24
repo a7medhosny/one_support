@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../../core/helpers/extensions.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../data/models/ticket_activity_response_model.dart';
+import '../../../../../../core/helpers/extensions.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../data/models/ticket_activity_response_model.dart';
 
 /// Renders a chronological activity audit trail for a ticket.
 class TicketActivityTimelineSection extends StatelessWidget {

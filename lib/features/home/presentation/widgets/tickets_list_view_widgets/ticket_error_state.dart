@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/helpers/extensions.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/widgets/app_button.dart';
+import '../../../../../../core/helpers/extensions.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/widgets/app_button.dart';
 
 /// Error state shown when ticket loading fails with a retry action.
 class TicketErrorState extends StatelessWidget {
