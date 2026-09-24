@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/networking/api_result.dart';
@@ -32,6 +33,7 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.success(data));
 
       case Failure(:final errorHandler):
+      debugPrint('LoginCubit login error: ${errorHandler.apiErrorModel}');
         emit(LoginState.failure(errorHandler.apiErrorModel));
     }
   }

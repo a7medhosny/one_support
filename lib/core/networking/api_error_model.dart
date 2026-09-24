@@ -8,15 +8,14 @@ class ApiErrorModel {
 
   final String? message;
 
-  @JsonKey(name: 'statusCode')
-  final int? code;
+  final int? statusCode;
 
   final List<String>? errors;
 
   const ApiErrorModel({
     this.success,
     this.message,
-    this.code,
+    this.statusCode,
     this.errors,
   });
 
@@ -28,13 +27,13 @@ class ApiErrorModel {
   ApiErrorModel copyWith({
     bool? success,
     String? message,
-    int? code,
+    int? statusCode,
     List<String>? errors,
   }) {
     return ApiErrorModel(
       success: success ?? this.success,
       message: message ?? this.message,
-      code: code ?? this.code,
+      statusCode: statusCode ?? this.statusCode,
       errors: errors ?? this.errors,
     );
   }

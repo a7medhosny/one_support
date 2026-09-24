@@ -2,6 +2,7 @@
 
 One Support is a Flutter-based customer support application that helps users report issues and receive assistance from dedicated support agents.
 
+
 ## Overview
 
 The application allows users to:
@@ -18,3 +19,4 @@ The application allows users to:
 The goal of One Support is to provide a simple, organized, and user-friendly platform for managing customer support requests while making existing solutions easily accessible to everyone.
 
 > **Note:** This project is currently under active development.
+

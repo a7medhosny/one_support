@@ -151,4 +151,135 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get registerFailed => 'Registration failed';
+
+  @override
+  String get tickets => 'Tickets';
+
+  @override
+  String get myTickets => 'My Tickets';
+
+  @override
+  String get newTicket => 'New Ticket';
+
+  @override
+  String get createTicket => 'Create Ticket';
+
+  @override
+  String get ticketTitle => 'Title';
+
+  @override
+  String get ticketTitleHint => 'Brief summary of the issue';
+
+  @override
+  String get ticketTitleRequired => 'Title is required';
+
+  @override
+  String get ticketDescription => 'Description';
+
+  @override
+  String get ticketDescriptionHint =>
+      'Provide detailed information about the issue';
+
+  @override
+  String get ticketDescriptionRequired => 'Description is required';
+
+  @override
+  String get priority => 'Priority';
+
+  @override
+  String get priorityLow => 'Low';
+
+  @override
+  String get priorityMedium => 'Medium';
+
+  @override
+  String get priorityHigh => 'High';
+
+  @override
+  String get priorityCritical => 'Critical';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get statusAll => 'All';
+
+  @override
+  String get statusOpen => 'Open';
+
+  @override
+  String get statusInProgress => 'In Progress';
+
+  @override
+  String get statusResolved => 'Resolved';
+
+  @override
+  String get statusClosed => 'Closed';
+
+  @override
+  String get searchTickets => 'Search tickets...';
+
+  @override
+  String get noTicketsFound => 'No tickets found';
+
+  @override
+  String get noTicketsDescription =>
+      'You don\'t have any tickets yet. Tap \'+\' to create your first ticket.';
+
+  @override
+  String get ticketCreatedSuccess => 'Ticket created successfully';
+
+  @override
+  String get ticketStatusUpdated => 'Ticket status updated successfully';
+
+  @override
+  String get ticketDetails => 'Ticket Details';
+
+  @override
+  String get closeTicket => 'Close Ticket';
+
+  @override
+  String get reopenTicket => 'Reopen Ticket';
+
+  @override
+  String get assignedTo => 'Assigned to';
+
+  @override
+  String get unassigned => 'Unassigned';
+
+  @override
+  String get createdAt => 'Created';
+
+  @override
+  String get updatedAt => 'Updated';
+
+  @override
+  String get comments => 'Comments';
+
+  @override
+  String get noComments => 'No comments yet';
+
+  @override
+  String get writeComment => 'Write a comment...';
+
+  @override
+  String get send => 'Send';
+
+  @override
+  String get commentAddedSuccess => 'Comment added successfully';
+
+  @override
+  String get activities => 'Activity History';
+
+  @override
+  String get noActivities => 'No activity history yet';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get logoutConfirmation => 'Are you sure you want to log out?';
+
+  @override
+  String get totalTickets => 'Total';
 }

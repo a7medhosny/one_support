@@ -151,4 +151,134 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get registerFailed => 'فشل إنشاء الحساب';
+
+  @override
+  String get tickets => 'التذاكر';
+
+  @override
+  String get myTickets => 'تذاكري';
+
+  @override
+  String get newTicket => 'تذكرة جديدة';
+
+  @override
+  String get createTicket => 'إنشاء تذكرة';
+
+  @override
+  String get ticketTitle => 'العنوان';
+
+  @override
+  String get ticketTitleHint => 'ملخص موجز للمشكلة';
+
+  @override
+  String get ticketTitleRequired => 'العنوان مطلوب';
+
+  @override
+  String get ticketDescription => 'الوصف';
+
+  @override
+  String get ticketDescriptionHint => 'قدم معلومات تفصيلية عن المشكلة';
+
+  @override
+  String get ticketDescriptionRequired => 'الوصف مطلوب';
+
+  @override
+  String get priority => 'الأولوية';
+
+  @override
+  String get priorityLow => 'منخفضة';
+
+  @override
+  String get priorityMedium => 'متوسطة';
+
+  @override
+  String get priorityHigh => 'عالية';
+
+  @override
+  String get priorityCritical => 'حرجة';
+
+  @override
+  String get status => 'الحالة';
+
+  @override
+  String get statusAll => 'الكل';
+
+  @override
+  String get statusOpen => 'مفتوحة';
+
+  @override
+  String get statusInProgress => 'قيد التنفيذ';
+
+  @override
+  String get statusResolved => 'تم الحل';
+
+  @override
+  String get statusClosed => 'مغلقة';
+
+  @override
+  String get searchTickets => 'بحث في التذاكر...';
+
+  @override
+  String get noTicketsFound => 'لم يتم العثور على تذاكر';
+
+  @override
+  String get noTicketsDescription =>
+      'ليس لديك أي تذاكر بعد. اضغط على \'+\' لإنشاء أول تذكرة.';
+
+  @override
+  String get ticketCreatedSuccess => 'تم إنشاء التذكرة بنجاح';
+
+  @override
+  String get ticketStatusUpdated => 'تم تحديث حالة التذكرة بنجاح';
+
+  @override
+  String get ticketDetails => 'تفاصيل التذكرة';
+
+  @override
+  String get closeTicket => 'إغلاق التذكرة';
+
+  @override
+  String get reopenTicket => 'إعادة فتح التذكرة';
+
+  @override
+  String get assignedTo => 'معين إلى';
+
+  @override
+  String get unassigned => 'غير معين';
+
+  @override
+  String get createdAt => 'تم الإنشاء';
+
+  @override
+  String get updatedAt => 'تم التحديث';
+
+  @override
+  String get comments => 'التعليقات';
+
+  @override
+  String get noComments => 'لا توجد تعليقات بعد';
+
+  @override
+  String get writeComment => 'اكتب تعليقًا...';
+
+  @override
+  String get send => 'إرسال';
+
+  @override
+  String get commentAddedSuccess => 'تمت إضافة التعليق بنجاح';
+
+  @override
+  String get activities => 'سجل النشاطات';
+
+  @override
+  String get noActivities => 'لا يوجد سجل نشاطات بعد';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
+  String get logoutConfirmation => 'هل أنت متأكد من رغبتك في تسجيل الخروج؟';
+
+  @override
+  String get totalTickets => 'الإجمالي';
 }

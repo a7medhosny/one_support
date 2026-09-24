@@ -189,5 +189,178 @@
   "registerFailed": "Registration failed",
   "@registerFailed": {
     "description": "Error message when registration fails"
+  },
+  "tickets": "Tickets",
+  "@tickets": {
+    "description": "Tickets title"
+  },
+  "myTickets": "My Tickets",
+  "@myTickets": {
+    "description": "My tickets title"
+  },
+  "newTicket": "New Ticket",
+  "@newTicket": {
+    "description": "New ticket button label"
+  },
+  "createTicket": "Create Ticket",
+  "@createTicket": {
+    "description": "Create ticket title and button"
+  },
+  "ticketTitle": "Title",
+  "@ticketTitle": {
+    "description": "Ticket title label"
+  },
+  "ticketTitleHint": "Brief summary of the issue",
+  "@ticketTitleHint": {
+    "description": "Ticket title hint"
+  },
+  "ticketTitleRequired": "Title is required",
+  "@ticketTitleRequired": {
+    "description": "Ticket title validation message"
+  },
+  "ticketDescription": "Description",
+  "@ticketDescription": {
+    "description": "Ticket description label"
+  },
+  "ticketDescriptionHint": "Provide detailed information about the issue",
+  "@ticketDescriptionHint": {
+    "description": "Ticket description hint"
+  },
+  "ticketDescriptionRequired": "Description is required",
+  "@ticketDescriptionRequired": {
+    "description": "Ticket description validation message"
+  },
+  "priority": "Priority",
+  "@priority": {
+    "description": "Priority label"
+  },
+  "priorityLow": "Low",
+  "@priorityLow": {
+    "description": "Low priority"
+  },
+  "priorityMedium": "Medium",
+  "@priorityMedium": {
+    "description": "Medium priority"
+  },
+  "priorityHigh": "High",
+  "@priorityHigh": {
+    "description": "High priority"
+  },
+  "priorityCritical": "Critical",
+  "@priorityCritical": {
+    "description": "Critical priority"
+  },
+  "status": "Status",
+  "@status": {
+    "description": "Status label"
+  },
+  "statusAll": "All",
+  "@statusAll": {
+    "description": "All status filter"
+  },
+  "statusOpen": "Open",
+  "@statusOpen": {
+    "description": "Open status"
+  },
+  "statusInProgress": "In Progress",
+  "@statusInProgress": {
+    "description": "In Progress status"
+  },
+  "statusResolved": "Resolved",
+  "@statusResolved": {
+    "description": "Resolved status"
+  },
+  "statusClosed": "Closed",
+  "@statusClosed": {
+    "description": "Closed status"
+  },
+  "searchTickets": "Search tickets...",
+  "@searchTickets": {
+    "description": "Search tickets input placeholder"
+  },
+  "noTicketsFound": "No tickets found",
+  "@noTicketsFound": {
+    "description": "Empty state title"
+  },
+  "noTicketsDescription": "You don't have any tickets yet. Tap '+' to create your first ticket.",
+  "@noTicketsDescription": {
+    "description": "Empty state description"
+  },
+  "ticketCreatedSuccess": "Ticket created successfully",
+  "@ticketCreatedSuccess": {
+    "description": "Success message after ticket creation"
+  },
+  "ticketStatusUpdated": "Ticket status updated successfully",
+  "@ticketStatusUpdated": {
+    "description": "Success message after status update"
+  },
+  "ticketDetails": "Ticket Details",
+  "@ticketDetails": {
+    "description": "Ticket details header"
+  },
+  "closeTicket": "Close Ticket",
+  "@closeTicket": {
+    "description": "Close ticket action"
+  },
+  "reopenTicket": "Reopen Ticket",
+  "@reopenTicket": {
+    "description": "Reopen ticket action"
+  },
+  "assignedTo": "Assigned to",
+  "@assignedTo": {
+    "description": "Assigned agent label"
+  },
+  "unassigned": "Unassigned",
+  "@unassigned": {
+    "description": "Unassigned agent label"
+  },
+  "createdAt": "Created",
+  "@createdAt": {
+    "description": "Created at label"
+  },
+  "updatedAt": "Updated",
+  "@updatedAt": {
+    "description": "Updated at label"
+  },
+  "comments": "Comments",
+  "@comments": {
+    "description": "Comments tab/header"
+  },
+  "noComments": "No comments yet",
+  "@noComments": {
+    "description": "Empty comments label"
+  },
+  "writeComment": "Write a comment...",
+  "@writeComment": {
+    "description": "Write comment placeholder"
+  },
+  "send": "Send",
+  "@send": {
+    "description": "Send button label"
+  },
+  "commentAddedSuccess": "Comment added successfully",
+  "@commentAddedSuccess": {
+    "description": "Success message after adding comment"
+  },
+  "activities": "Activity History",
+  "@activities": {
+    "description": "Activity timeline header"
+  },
+  "noActivities": "No activity history yet",
+  "@noActivities": {
+    "description": "Empty activities label"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button"
+  },
+  "logoutConfirmation": "Are you sure you want to log out?",
+  "@logoutConfirmation": {
+    "description": "Logout confirmation message"
+  },
+  "totalTickets": "Total",
+  "@totalTickets": {
+    "description": "Total tickets stat"
   }
 }
+

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../../../../core/networking/api_error_handler.dart';
 import '../../../../../core/networking/api_result.dart';
 import '../../../../../core/storage/preferences/preferences_constants.dart';
@@ -27,8 +29,13 @@ class LoginRepository {
       await _saveUserData(loginRequestModel, response);
       return ApiResult.success(response);
     } catch (error) {
+      debugPrint('LoginRepository login error: $error');
       return ApiResult.failure(ErrorHandler.handle(error));
     }
+  }
+
+  Future<void> logout() async {
+    await _secureStorageService.clear();
   }
 
   Future<void> _saveUserData(
@@ -93,9 +100,27 @@ class LoginRepository {
   String? get savedEmail =>
       _preferencesService.getString(PreferencesConstants.userEmail);
 
-  Future<bool> get isUserLoggedIn async =>
-      await _secureStorageService.get(
-        key: SecureStorageConstants.accessToken,
-      ) !=
-      null;
+  Future<String?> get userToken async =>
+      await _secureStorageService.get(key: SecureStorageConstants.accessToken);
+
+  Future<bool> isUserLoggedIn() async {
+    final String? token = await userToken;
+    return token != null && token.isNotEmpty && !isTokenExpired();
+  }
+
+  bool isTokenExpired() {
+    final String? tokenExpiration = _preferencesService.getString(
+      PreferencesConstants.tokenExpiration,
+    );
+    if (tokenExpiration == null || tokenExpiration.isEmpty) {
+      return true; // Consider token expired if expiration is null or empty
+    }
+
+    final expirationDateTime = DateTime.tryParse(tokenExpiration);
+    if (expirationDateTime == null) {
+      return true; // Consider token expired if parsing fails
+    }
+
+    return DateTime.now().isAfter(expirationDateTime);
+  }
 }

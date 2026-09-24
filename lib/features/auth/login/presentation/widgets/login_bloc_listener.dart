@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../core/helpers/extensions.dart';
 import '../../../../../core/helpers/ui_feedback_helper.dart';
+import '../../../../../core/networking/dio_factory.dart';
 import '../../../../../core/routing/app_routes.dart';
 import '../cubit/login_cubit.dart';
 import '../cubit/login_state.dart';
@@ -24,6 +25,10 @@ class LoginBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           success: (loginResponse) {
+            if (loginResponse.token != null &&
+                loginResponse.token!.isNotEmpty) {
+              DioFactory.setTokenIntoHeaderAfterLogin(loginResponse.token!);
+            }
             UIFeedbackHelper.showSuccessSnackBar(
               context: context,
               message: loginResponse.message ?? context.l10n.loginSuccess,
@@ -35,6 +40,8 @@ class LoginBlocListener extends StatelessWidget {
                 apiErrorModel.errors?.firstOrNull ??
                 apiErrorModel.message ??
                 context.l10n.loginFailed;
+          
+
             UIFeedbackHelper.showErrorSnackBar(
               context: context,
               message: errorMessage,

@@ -11,9 +11,10 @@ class SplashCubit extends Cubit<SplashState> {
   Future<void> checkUserLoginStatus() async {
     await Future.delayed(const Duration(seconds: 3, milliseconds: 250));
 
-    final isLoggedIn = await _loginRepository.isUserLoggedIn;
-    if (isLoggedIn) {
-      emit(const SplashState.navigateHome());
+    final isUserLoggedIn = await _loginRepository.isUserLoggedIn();
+    if (isUserLoggedIn) {
+      final token = await _loginRepository.userToken;
+      emit(SplashState.navigateHome(token!));
     } else {
       emit(const SplashState.navigateLogin());
     }

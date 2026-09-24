@@ -385,6 +385,264 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Registration failed'**
   String get registerFailed;
+
+  /// Tickets title
+  ///
+  /// In en, this message translates to:
+  /// **'Tickets'**
+  String get tickets;
+
+  /// My tickets title
+  ///
+  /// In en, this message translates to:
+  /// **'My Tickets'**
+  String get myTickets;
+
+  /// New ticket button label
+  ///
+  /// In en, this message translates to:
+  /// **'New Ticket'**
+  String get newTicket;
+
+  /// Create ticket title and button
+  ///
+  /// In en, this message translates to:
+  /// **'Create Ticket'**
+  String get createTicket;
+
+  /// Ticket title label
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get ticketTitle;
+
+  /// Ticket title hint
+  ///
+  /// In en, this message translates to:
+  /// **'Brief summary of the issue'**
+  String get ticketTitleHint;
+
+  /// Ticket title validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Title is required'**
+  String get ticketTitleRequired;
+
+  /// Ticket description label
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get ticketDescription;
+
+  /// Ticket description hint
+  ///
+  /// In en, this message translates to:
+  /// **'Provide detailed information about the issue'**
+  String get ticketDescriptionHint;
+
+  /// Ticket description validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Description is required'**
+  String get ticketDescriptionRequired;
+
+  /// Priority label
+  ///
+  /// In en, this message translates to:
+  /// **'Priority'**
+  String get priority;
+
+  /// Low priority
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get priorityLow;
+
+  /// Medium priority
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get priorityMedium;
+
+  /// High priority
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get priorityHigh;
+
+  /// Critical priority
+  ///
+  /// In en, this message translates to:
+  /// **'Critical'**
+  String get priorityCritical;
+
+  /// Status label
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// All status filter
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get statusAll;
+
+  /// Open status
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get statusOpen;
+
+  /// In Progress status
+  ///
+  /// In en, this message translates to:
+  /// **'In Progress'**
+  String get statusInProgress;
+
+  /// Resolved status
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get statusResolved;
+
+  /// Closed status
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get statusClosed;
+
+  /// Search tickets input placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'Search tickets...'**
+  String get searchTickets;
+
+  /// Empty state title
+  ///
+  /// In en, this message translates to:
+  /// **'No tickets found'**
+  String get noTicketsFound;
+
+  /// Empty state description
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have any tickets yet. Tap \'+\' to create your first ticket.'**
+  String get noTicketsDescription;
+
+  /// Success message after ticket creation
+  ///
+  /// In en, this message translates to:
+  /// **'Ticket created successfully'**
+  String get ticketCreatedSuccess;
+
+  /// Success message after status update
+  ///
+  /// In en, this message translates to:
+  /// **'Ticket status updated successfully'**
+  String get ticketStatusUpdated;
+
+  /// Ticket details header
+  ///
+  /// In en, this message translates to:
+  /// **'Ticket Details'**
+  String get ticketDetails;
+
+  /// Close ticket action
+  ///
+  /// In en, this message translates to:
+  /// **'Close Ticket'**
+  String get closeTicket;
+
+  /// Reopen ticket action
+  ///
+  /// In en, this message translates to:
+  /// **'Reopen Ticket'**
+  String get reopenTicket;
+
+  /// Assigned agent label
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned to'**
+  String get assignedTo;
+
+  /// Unassigned agent label
+  ///
+  /// In en, this message translates to:
+  /// **'Unassigned'**
+  String get unassigned;
+
+  /// Created at label
+  ///
+  /// In en, this message translates to:
+  /// **'Created'**
+  String get createdAt;
+
+  /// Updated at label
+  ///
+  /// In en, this message translates to:
+  /// **'Updated'**
+  String get updatedAt;
+
+  /// Comments tab/header
+  ///
+  /// In en, this message translates to:
+  /// **'Comments'**
+  String get comments;
+
+  /// Empty comments label
+  ///
+  /// In en, this message translates to:
+  /// **'No comments yet'**
+  String get noComments;
+
+  /// Write comment placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'Write a comment...'**
+  String get writeComment;
+
+  /// Send button label
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get send;
+
+  /// Success message after adding comment
+  ///
+  /// In en, this message translates to:
+  /// **'Comment added successfully'**
+  String get commentAddedSuccess;
+
+  /// Activity timeline header
+  ///
+  /// In en, this message translates to:
+  /// **'Activity History'**
+  String get activities;
+
+  /// Empty activities label
+  ///
+  /// In en, this message translates to:
+  /// **'No activity history yet'**
+  String get noActivities;
+
+  /// Logout button
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
+  /// Logout confirmation message
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to log out?'**
+  String get logoutConfirmation;
+
+  /// Total tickets stat
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get totalTickets;
 }
 
 class _AppLocalizationsDelegate

@@ -123,11 +123,11 @@ return navigateLogin(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  navigateHome,TResult Function()?  navigateLogin,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( String token)?  navigateHome,TResult Function()?  navigateLogin,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _NavigateHome() when navigateHome != null:
-return navigateHome();case _NavigateLogin() when navigateLogin != null:
+return navigateHome(_that.token);case _NavigateLogin() when navigateLogin != null:
 return navigateLogin();case _:
   return orElse();
 
@@ -146,11 +146,11 @@ return navigateLogin();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  navigateHome,required TResult Function()  navigateLogin,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( String token)  navigateHome,required TResult Function()  navigateLogin,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case _NavigateHome():
-return navigateHome();case _NavigateLogin():
+return navigateHome(_that.token);case _NavigateLogin():
 return navigateLogin();}
 }
 /// A variant of `when` that fallback to returning `null`
@@ -165,11 +165,11 @@ return navigateLogin();}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  navigateHome,TResult? Function()?  navigateLogin,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( String token)?  navigateHome,TResult? Function()?  navigateLogin,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _NavigateHome() when navigateHome != null:
-return navigateHome();case _NavigateLogin() when navigateLogin != null:
+return navigateHome(_that.token);case _NavigateLogin() when navigateLogin != null:
 return navigateLogin();case _:
   return null;
 
@@ -214,33 +214,69 @@ String toString() {
 
 
 class _NavigateHome implements SplashState {
-  const _NavigateHome();
+  const _NavigateHome(this.token);
   
 
+ final  String token;
 
-
+/// Create a copy of SplashState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$NavigateHomeCopyWith<_NavigateHome> get copyWith => __$NavigateHomeCopyWithImpl<_NavigateHome>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _NavigateHome);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _NavigateHome&&(identical(other.token, token) || other.token == token));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode {
+    return Object.hash(runtimeType,token);
+}
 
 @override
 String toString() {
-    return 'SplashState.navigateHome()';
+    return 'SplashState.navigateHome(token: $token)';
 }
 
 
 }
 
+/// @nodoc
+abstract mixin class _$NavigateHomeCopyWith<$Res> implements $SplashStateCopyWith<$Res> {
+  factory _$NavigateHomeCopyWith(_NavigateHome value, $Res Function(_NavigateHome) _then) = __$NavigateHomeCopyWithImpl;
+@useResult
+$Res call({
+ String token
+});
 
 
+
+
+}
+/// @nodoc
+class __$NavigateHomeCopyWithImpl<$Res>
+    implements _$NavigateHomeCopyWith<$Res> {
+  __$NavigateHomeCopyWithImpl(this._self, this._then);
+
+  final _NavigateHome _self;
+  final $Res Function(_NavigateHome) _then;
+
+/// Create a copy of SplashState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? token = null,}) {
+  return _then(_NavigateHome(
+null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
 
 /// @nodoc
 

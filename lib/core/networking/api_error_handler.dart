@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'api_error_model.dart';
 import 'api_errors.dart';
 
@@ -57,67 +58,67 @@ extension DataSourceExtension on DataSource {
     switch (this) {
       case DataSource.noContent:
         return ApiErrorModel(
-          code: ResponseCode.noContent,
+          statusCode: ResponseCode.noContent,
           message: ResponseMessage.noContent,
         );
       case DataSource.badRequest:
         return ApiErrorModel(
-          code: ResponseCode.badRequest,
+          statusCode: ResponseCode.badRequest,
           message: ResponseMessage.badRequest,
         );
       case DataSource.unauthorized:
         return ApiErrorModel(
-          code: ResponseCode.unauthorized,
+          statusCode: ResponseCode.unauthorized,
           message: ResponseMessage.unauthorized,
         );
       case DataSource.forbidden:
         return ApiErrorModel(
-          code: ResponseCode.forbidden,
+          statusCode: ResponseCode.forbidden,
           message: ResponseMessage.forbidden,
         );
       case DataSource.notFound:
         return ApiErrorModel(
-          code: ResponseCode.notFound,
+          statusCode: ResponseCode.notFound,
           message: ResponseMessage.notFound,
         );
       case DataSource.internalServerError:
         return ApiErrorModel(
-          code: ResponseCode.internalServerError,
+          statusCode: ResponseCode.internalServerError,
           message: ResponseMessage.internalServerError,
         );
       case DataSource.connectTimeout:
         return ApiErrorModel(
-          code: ResponseCode.connectTimeout,
+          statusCode: ResponseCode.connectTimeout,
           message: ResponseMessage.connectTimeout,
         );
       case DataSource.cancel:
         return ApiErrorModel(
-          code: ResponseCode.cancel,
+          statusCode: ResponseCode.cancel,
           message: ResponseMessage.cancel,
         );
       case DataSource.receiveTimeout:
         return ApiErrorModel(
-          code: ResponseCode.receiveTimeout,
+          statusCode: ResponseCode.receiveTimeout,
           message: ResponseMessage.receiveTimeout,
         );
       case DataSource.sendTimeout:
         return ApiErrorModel(
-          code: ResponseCode.sendTimeout,
+          statusCode: ResponseCode.sendTimeout,
           message: ResponseMessage.sendTimeout,
         );
       case DataSource.cacheError:
         return ApiErrorModel(
-          code: ResponseCode.cacheError,
+          statusCode: ResponseCode.cacheError,
           message: ResponseMessage.cacheError,
         );
       case DataSource.noInternetConnection:
         return ApiErrorModel(
-          code: ResponseCode.noInternetConnection,
+          statusCode: ResponseCode.noInternetConnection,
           message: ResponseMessage.noInternetConnection,
         );
       case DataSource.defaultError:
         return ApiErrorModel(
-          code: ResponseCode.defaultError,
+          statusCode: ResponseCode.defaultError,
           message: ResponseMessage.defaultError,
         );
     }
@@ -139,6 +140,11 @@ class ErrorHandler implements Exception {
 }
 
 ApiErrorModel _handleDioError(DioException error) {
+  debugPrint(
+    'Dio Message: ${error.message}',
+  );
+  debugPrint('Dio Error Type: ${error.type}');
+  debugPrint('Dio Error Response: ${error.response?.data}');
   switch (error.type) {
     case DioExceptionType.connectionTimeout:
       return DataSource.connectTimeout.getFailure();
@@ -153,7 +159,7 @@ ApiErrorModel _handleDioError(DioException error) {
       return DataSource.noInternetConnection.getFailure();
     case DioExceptionType.transformTimeout:
       return DataSource.defaultError.getFailure();
-      
+
     case DioExceptionType.unknown:
     case DioExceptionType.badResponse:
       try {
@@ -163,7 +169,7 @@ ApiErrorModel _handleDioError(DioException error) {
         } else {
           return ApiErrorModel(
             message: error.message ?? 'Unknown error',
-            code: error.response?.statusCode,
+            statusCode: error.response?.statusCode,
           );
         }
       } catch (_) {

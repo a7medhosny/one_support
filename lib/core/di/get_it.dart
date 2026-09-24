@@ -21,6 +21,10 @@ import '../../features/auth/register/data/datasources/register_api_service.dart'
 import '../../features/auth/register/data/datasources/register_remote_data_source.dart';
 import '../../features/auth/register/data/repository/register_repository.dart';
 import '../../features/auth/register/presentation/cubit/register_cubit.dart';
+import '../../features/home/data/datasource/home_api_service.dart';
+import '../../features/home/data/datasource/home_remote_data_source.dart';
+import '../../features/home/data/repository/home_repository.dart';
+import '../../features/home/presentation/cubit/home_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -94,4 +98,16 @@ Future<void> init() async {
   getIt.registerFactory<SplashCubit>(
     () => SplashCubit(getIt<LoginRepository>()),
   );
+
+  // Home
+  getIt.registerLazySingleton<HomeApiService>(
+    () => HomeApiService(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<HomeRemoteDataSource>(
+    () => HomeRemoteDataSource(getIt<HomeApiService>()),
+  );
+  getIt.registerLazySingleton<HomeRepository>(
+    () => HomeRepository(getIt<HomeRemoteDataSource>()),
+  );
+  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt<HomeRepository>()));
 }

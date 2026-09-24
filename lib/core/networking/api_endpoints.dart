@@ -4,4 +4,6 @@ abstract final class ApiEndpoints {
   // Authentication
   static const String login = 'api/v1/Account/login';
   static const String register = 'api/v1/Account/register';
+
+  static const String tickets = '/api/v1/tickets';
 }
