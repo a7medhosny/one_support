@@ -71,5 +71,8 @@ class DioFactory {
   static void setTokenIntoHeaderAfterLogin(String token) {
     dio?.options.headers['Authorization'] = 'Bearer $token';
   }
+  static void removeTokenFromHeaderAfterLogout() {
+    dio?.options.headers.remove('Authorization');
+  }
 
 }

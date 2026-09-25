@@ -13,6 +13,7 @@ import '../../../../../core/storage/preferences/preferences_service.dart';
 import '../../../../../core/storage/secure_storage/secure_storage_service.dart';
 import '../../../../../core/theme/cubit/theme_cubit.dart';
 import '../../../../../core/theme/cubit/theme_state.dart';
+import '../../../../core/networking/dio_factory.dart';
 
 /// App bar widget for the Home screen with actions for theme, language, and logout.
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -50,6 +51,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
     if (confirmed == true) {
       await getIt<SecureStorageService>().clear();
+      DioFactory.removeTokenFromHeaderAfterLogout();
       if (context.mounted) {
         context.go(AppRoutes.login);
       }
