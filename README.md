@@ -1,282 +1,378 @@
-# 🎫 One Support
+# One Support
 
-<div align="center">
+[![Flutter Version](https://img.shields.io/badge/Flutter-3.10%2B-02569B?style=flat-square&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart Version](https://img.shields.io/badge/Dart-3.0%2B-0175C2?style=flat-square&logo=dart&logoColor=white)](https://dart.dev)
+[![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2F%20Feature--First-orange?style=flat-square)](https://flutter.dev)
+[![State Management](https://img.shields.io/badge/State%20Management-BLoC%20%2F%20Cubit-blueviolet?style=flat-square)](https://bloclibrary.dev)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-[![Flutter Version](https://img.shields.io/badge/Flutter-3.10%2B-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
-[![Dart Version](https://img.shields.io/badge/Dart-3.0%2B-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
-[![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2F%20Feature--First-orange?style=for-the-badge)](https://flutter.dev)
-[![State Management](https://img.shields.io/badge/State%20Management-BLoC%20%2F%20Cubit-blueviolet?style=for-the-badge)](https://bloclibrary.dev)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-
-**A modern, production-grade Customer Support & Ticket Management Mobile Application built with Flutter.**
-
-[Key Features](#-key-features) • [Architecture](#-architecture--design-patterns) • [Tech Stack](#-tech-stack) • [Project Structure](#-project-structure) • [Getting Started](#-getting-started) • [Contributing](#-contributing)
-
-</div>
+One Support is a customer support and ticket management mobile application built with Flutter. It provides a structured platform for users to submit issues, track ticket progress, communicate with support agents, and review ticket activity histories.
 
 ---
 
-## 📖 Overview
+## Table of Contents
 
-**One Support** is a robust customer support application designed to bridge the communication gap between customers and support teams. Built using modern Flutter architecture principles, it provides an intuitive platform where users can report issues, track ticket progress in real-time, communicate with agents through comment threads, and review detailed activity audit trails.
-
-### Core Objectives
-* **Seamless Issue Resolution**: Enable users to quickly submit and monitor support requests.
-* **Transparent Lifecycle Tracking**: Offer comprehensive visibility into ticket status updates, assignment details, and chronological activity histories.
-* **Extensible & Maintainable Codebase**: Built following **Feature-First Clean Architecture** with **BLoC/Cubit**, dependency injection, and layered storage strategies.
-
----
-
-## ✨ Key Features
-
-### 🔐 Authentication & Session Security
-* **User Authentication**: Secure Sign In and Registration workflows with input validations.
-* **Token Management**: JWT storage secured using `flutter_secure_storage` with automated token refresh capability.
-* **Remember Me**: Persistent session state management via `shared_preferences`.
-
-### 🎫 Ticket Management & Tracking
-* **Ticket Overview Dashboard**: Real-time counter metrics for total, open, in-progress, and resolved tickets.
-* **Ticket Submission**: Form to create tickets with severity levels (`Low`, `Medium`, `High`, `Urgent`).
-* **Live Search & Filter**: Instant search querying and multi-attribute filters (`Status`, `Priority`, `Sort Order`).
-* **Pagination Support**: Scalable infinite scrolling and pull-to-refresh list handling.
-* **Status Updates**: Streamlined ticket lifecycle operations (e.g., closing and reopening tickets).
-
-### 💬 Collaborative Discussion & Activity Audits
-* **Chronological Comments**: Real-time comment threads between customers and support agents on active tickets.
-* **Audit Trail & Activity Timeline**: Detailed history logs of all modifications, assignments, and status updates per ticket.
-
-### 🌐 Localization & Internationalization (i18n / l10n)
-* **Bilingual Support**: Fully localized in **English** (`en`) and **Arabic** (`ar`).
-* **Dynamic RTL/LTR Switching**: Automatic layout direction adaptation for right-to-left (Arabic) and left-to-right (English) scripts.
-* **Preference Persistence**: User language preference is retained across application restarts.
-
-### 🎨 Theming & Modern UI / UX
-* **Material 3 Design**: Built using Google's Material You design system.
-* **Light & Dark Modes**: Adaptive color schemes with dynamic switching and persistence.
-* **Responsive Layouts**: Designed to look polished across varying mobile screen sizes.
-
-### 🔔 Push Notifications
-* **Firebase Cloud Messaging (FCM)**: Remote notifications for ticket status updates and agent replies.
-* **Background Handler**: Dedicated background notification processing via `@pragma('vm:entry-point')`.
-
-### 💾 Multi-Tier Storage Architecture
-* **Secure Storage**: Sensitive auth credentials and tokens via `flutter_secure_storage`.
-* **Shared Preferences**: User configuration, theme modes, and localization states via `shared_preferences`.
-* **High-Performance Cache**: Offline key-value caching powered by `hive_ce` / `hive_ce_flutter`.
+- [1. Project Overview](#1-project-overview)
+- [2. Features](#2-features)
+- [3. Architecture](#3-architecture)
+- [4. Tech Stack](#4-tech-stack)
+- [5. Project Structure](#5-project-structure)
+- [6. Getting Started](#6-getting-started)
+- [7. Configuration](#7-configuration)
+- [8. Application Flow](#8-application-flow)
+- [9. User Roles](#9-user-roles)
+- [10. Notification System](#10-notification-system)
+- [11. State Management](#11-state-management)
+- [12. Networking](#12-networking)
+- [13. Storage](#13-storage)
+- [14. Screenshots](#14-screenshots)
+- [15. Contributing](#15-contributing)
+- [16. Future Improvements](#16-future-improvements)
+- [17. License](#17-license)
+- [18. Author](#18-author)
 
 ---
 
-## 🏛 Architecture & Design Patterns
+## 1. Project Overview
 
-The project follows the **Feature-First Clean Architecture** approach, ensuring clear separation of concerns, high testability, and maintainability.
+One Support streamlines issue tracking and resolution between end-users and support teams. The application delivers:
 
+- Secure user authentication and session persistence.
+- Ticket creation, lifecycle tracking, search, and filtering.
+- Communication threads via ticket comments.
+- Complete audit trails displaying ticket activity history.
+- Bilingual localization (English and Arabic) with dynamic RTL and LTR support.
+- Adaptive theming supporting Material 3 Light and Dark modes.
+
+---
+
+## 2. Features
+
+- **Authentication**: User registration and login with form validations, token persistence, and "Remember Me" capability.
+- **Ticket Dashboard**: Overview metrics displaying counts for total, open, in-progress, and resolved tickets.
+- **Ticket Management**: Create support requests with defined priorities (`Low`, `Medium`, `High`, `Critical`).
+- **Search and Filtering**: Real-time ticket search by title or description, filtered by status and priority.
+- **Ticket Details**: Detailed sheet displaying ticket metadata, status actions, comment feed, and audit timeline.
+- **Ticket Comments**: Post and view chronological comments on tickets.
+- **Activity Timeline**: Chronological event logs for status transitions and assignments.
+- **Internationalization (i18n)**: English and Arabic language support with persisted user preferences.
+- **Theming**: Dynamic Light and Dark modes powered by Material 3 color schemes.
+- **Push Notifications**: Firebase Cloud Messaging setup for background and foreground notifications.
+
+---
+
+## 3. Architecture
+
+The project follows a **Feature-First Clean Architecture** pattern. This structure ensures clear separation of concerns, high testability, and modularity.
+
+```mermaid
+graph TD
+    subgraph Presentation_Layer [Presentation Layer]
+        UI[Pages & Widgets]
+        Cubit[BLoC / Cubits]
+        State[Freezed States]
+        UI --> Cubit
+        Cubit --> State
+        State --> UI
+    end
+
+    subgraph Data_Layer [Data Layer]
+        Repo[Repositories]
+        RDS[Remote Data Sources]
+        API[Retrofit API Services]
+        Repo --> RDS
+        RDS --> API
+    end
+
+    subgraph Core_Layer [Core & Infrastructure Layer]
+        DI[GetIt Service Locator]
+        Net[Dio Factory & Interceptors]
+        Storage[Secure Storage / SharedPreferences / Hive]
+        Router[GoRouter]
+    end
+
+    Cubit --> Repo
+    API --> Net
+    Repo --> Storage
+    UI --> Router
+    UI --> DI
 ```
-                  ┌─────────────────────────────────┐
-                  │        Presentation Layer       │
-                  │  (Pages, Widgets, Cubits/State) │
-                  └────────────────┬────────────────┘
-                                   │
-                                   ▼
-                  ┌─────────────────────────────────┐
-                  │           Data Layer            │
-                  │ (Repositories, DataSources, DTOs)│
-                  └────────────────┬────────────────┘
-                                   │
-                                   ▼
-                  ┌─────────────────────────────────┐
-                  │       Core & Infrastructure     │
-                  │(Networking, DI, Storage, Theming)│
-                  └─────────────────────────────────┘
-```
 
-* **Presentation Layer**: Contains UI screens, reusable modular widgets, and `Cubit` state management components.
-* **Data Layer**: Houses API service interfaces (`Retrofit`), data models/DTOs with `json_serializable`, and concrete repository implementations.
-* **Core Layer**: Houses cross-cutting concerns including dependency injection (`get_it`), HTTP networking clients (`Dio`), error handling (`ApiResult`), routing (`go_router`), and storage abstractions.
+- **Presentation Layer**: UI widgets, screens, and BLoC/Cubit state handlers.
+- **Data Layer**: Data sources, DTOs (`json_serializable`), and repository implementations.
+- **Core Layer**: Shared utilities, networking clients, local storage engines, dependency injection, routing, and theming.
 
 ---
 
-## 📂 Project Structure
+## 4. Tech Stack
+
+| Category | Technology / Package | Version | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Framework** | Flutter | ^3.10.8 | Cross-platform application framework |
+| **Language** | Dart | ^3.10.8 | Core programming language |
+| **State Management** | flutter_bloc | ^9.1.1 | Predictable state container |
+| **Networking** | Dio / Retrofit | ^5.11.1 / ^4.10.0 | REST client and type-safe API generation |
+| **Routing** | go_router | ^18.0.1 | Declarative URL-based routing |
+| **Dependency Injection** | get_it | ^9.2.1 | Service locator for inversion of control |
+| **Data Immutability** | freezed / json_annotation | ^4.0.1 / ^4.12.0 | Immutable states and JSON model serialization |
+| **Secure Storage** | flutter_secure_storage | ^11.1.1 | Encrypted storage for authentication tokens |
+| **Key-Value Storage** | shared_preferences | ^2.5.5 | User settings and preferences storage |
+| **Cache Engine** | hive_ce / hive_ce_flutter | ^2.20.0 / ^2.3.4 | Local high-performance NoSQL box caching |
+| **Push Notifications** | firebase_messaging | ^16.7.0 | Firebase cloud notifications delivery |
+| **Logging** | pretty_dio_logger | ^1.4.0 | Formatted network traffic logging |
+
+---
+
+## 5. Project Structure
 
 ```
 lib/
 ├── core/
-│   ├── di/                 # Dependency injection container (get_it)
-│   ├── helpers/            # Regex utilities, validators, UI feedback helpers
-│   ├── localization/       # l10n ARB files, Cubit, and translation delegates
-│   ├── networking/         # Dio factory, API endpoints, error models & handlers
+│   ├── di/                 # Dependency injection container setup (GetIt)
+│   ├── helpers/            # Input validators, extensions, UI spacing helpers
+│   ├── localization/       # ARB translation files, delegates, and LocalizationCubit
+│   ├── networking/         # Dio client, API endpoints, error handler, ApiResult
 │   ├── routing/            # GoRouter configuration and route definitions
-│   ├── services/           # Firebase messaging and third-party integrations
-│   ├── storage/            # Secure storage, preferences, and Hive cache services
-│   ├── theme/              # Color schemes, theme Cubit, and ThemeData
+│   ├── services/           # Firebase messaging service implementations
+│   ├── storage/            # Secure storage, preferences, and Hive cache abstractions
+│   ├── theme/              # Color schemes, ThemeData, and ThemeCubit
 │   └── widgets/            # Globally shared UI components (buttons, text fields)
 ├── features/
 │   ├── auth/
-│   │   ├── login/          # Login data sources, repository, Cubit, and UI
-│   │   └── register/       # Registration data sources, repository, Cubit, and UI
+│   │   ├── login/          # Login data sources, repository, Cubit, and pages
+│   │   └── register/       # Register data sources, repository, Cubit, and pages
 │   ├── home/
-│   │   ├── data/           # Ticket APIs, data models, and HomeRepository
-│   │   └── presentation/   # Home dashboard, filter bars, ticket details & sheets
-│   └── splash/             # Splash screen, startup session validation & routing
-├── firebase_options.dart   # Firebase platform configurations
-├── main.dart               # Application entry point
-└── one_support_app.dart    # Root MaterialApp with theme and localization providers
+│   │   ├── data/           # Ticket APIs, response models, and HomeRepository
+│   │   └── presentation/   # Dashboard, filters, lists, ticket details, and bottom sheets
+│   └── splash/             # Startup splash screen and session validation
+├── firebase_options.dart   # Firebase CLI generated configuration
+├── main.dart               # Main entry point and background messaging setup
+└── one_support_app.dart    # Root MaterialApp configuration
 ```
 
 ---
 
-## 🛠 Tech Stack
-
-| Category | Technology / Package | Description |
-| :--- | :--- | :--- |
-| **Framework** | [Flutter](https://flutter.dev) | Cross-platform UI toolkit |
-| **Language** | [Dart](https://dart.dev) | Modern, client-optimized object-oriented language |
-| **State Management** | [flutter_bloc](https://pub.dev/packages/flutter_bloc) | Predictable state management using the BLoC / Cubit pattern |
-| **Networking** | [Dio](https://pub.dev/packages/dio) & [Retrofit](https://pub.dev/packages/retrofit) | Type-safe HTTP client with interceptors and code generation |
-| **Navigation** | [go_router](https://pub.dev/packages/go_router) | Declarative routing solution for Flutter |
-| **Dependency Injection** | [get_it](https://pub.dev/packages/get_it) | Fast service locator for inversion of control |
-| **Data Immutability** | [freezed](https://pub.dev/packages/freezed) & [json_serializable](https://pub.dev/packages/json_serializable) | Code-generation for immutable union classes and JSON serialization |
-| **Local Storage** | [hive_ce](https://pub.dev/packages/hive_ce) & [shared_preferences](https://pub.dev/packages/shared_preferences) | High-speed cache and user preferences storage |
-| **Secure Storage** | [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage) | Keychain / Keystore encrypted storage |
-| **Push Notifications** | [firebase_messaging](https://pub.dev/packages/firebase_messaging) | Cloud messaging and real-time push alerts |
-| **Logging** | [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger) | Formatted console network logs |
-
----
-
-## 🚀 Getting Started
-
-Follow these instructions to set up and run the project locally.
+## 6. Getting Started
 
 ### Prerequisites
 
-Ensure you have the following installed on your development machine:
-* [Flutter SDK](https://docs.flutter.dev/get-started/install) (`^3.10.8` or newer)
-* [Dart SDK](https://dart.dev/get-dart)
-* [Android Studio](https://developer.android.com/studio) or [Xcode](https://developer.apple.com/xcode/) (for iOS simulation)
-* [VS Code](https://code.visualstudio.com/) with Flutter & Dart extensions (recommended)
+- Flutter SDK version `>= 3.10.8`
+- Dart SDK version `>= 3.10.8`
+- Android Studio / VS Code with Flutter extensions
+- Android SDK or Xcode (for iOS builds)
 
-### 1. Clone the Repository
+### Installation Steps
 
-```bash
-git clone https://github.com/your-username/one_support.git
-cd one_support
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/one_support.git
+   cd one_support
+   ```
+
+2. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+
+3. Run code generation:
+   ```bash
+   flutter pub run build_runner build --delete-conflicting-outputs
+   ```
+
+4. Run the application:
+   ```bash
+   flutter run
+   ```
+
+---
+
+## 7. Configuration
+
+### Backend Base URL
+The backend API base URL is configured in `lib/core/networking/api_endpoints.dart`:
+
+```dart
+abstract final class ApiEndpoints {
+  static const String baseUrl = 'https://support-ticket.runasp.net/';
+  static const String login = 'api/v1/Account/login';
+  static const String register = 'api/v1/Account/register';
+  static const String tickets = '/api/v1/tickets';
+}
 ```
 
-### 2. Install Dependencies
+### Firebase Setup
+1. Ensure the Firebase CLI and FlutterFire CLI are installed.
+2. Run configuration to generate platform-specific settings:
+   ```bash
+   flutterfire configure
+   ```
+3. Verify that `firebase_options.dart` contains valid app credentials.
 
-Fetch all required packages using Flutter CLI:
+---
 
-```bash
-flutter pub get
-```
+## 8. Application Flow
 
-### 3. Generate Code Artifacts
-
-Generate Retrofit API services, Freezed models, JSON serializers, and localization classes:
-
-```bash
-flutter pub run build_runner build --delete-conflicting-outputs
-```
-
-> 💡 **Tip:** Use `flutter pub run build_runner watch --delete-conflicting-outputs` during active development to automatically generate files on change.
-
-### 4. Configure Firebase
-
-Ensure `firebase_options.dart` is correctly configured with your Firebase project credentials:
-
-```bash
-# If configuring for the first time
-flutterfire configure
-```
-
-### 5. Run the Application
-
-Launch the application on an emulator, simulator, or connected physical device:
-
-```bash
-# Debug mode
-flutter run
-
-# Run on a specific device
-flutter run -d <device_id>
+```mermaid
+flowchart TD
+    Start([Launch App]) --> Splash[Splash Screen]
+    Splash --> CheckAuth{Token Valid?}
+    
+    CheckAuth -- No --> Login[Login Screen]
+    CheckAuth -- Yes --> Home[Home Dashboard]
+    
+    Login --> Register[Register Screen]
+    Register --> Login
+    Login -- Success --> SaveToken[Save Token to Secure Storage]
+    SaveToken --> Home
+    
+    Home --> CreateTicket[Create Ticket Bottom Sheet]
+    Home --> FilterSearch[Filter & Search Tickets]
+    Home --> TicketDetails[Ticket Details Bottom Sheet]
+    
+    TicketDetails --> AddComment[Post Comment]
+    TicketDetails --> UpdateStatus[Update Status: Close / Reopen]
+    TicketDetails --> ViewActivity[View Activity Audit Timeline]
 ```
 
 ---
 
-## 🧪 Testing
+## 9. User Roles
 
-The repository contains automated unit and widget tests to ensure code reliability:
+The system recognizes three primary roles based on backend authentication:
 
-```bash
-# Run all tests
-flutter test
-
-# Run tests with coverage report
-flutter test --coverage
-```
-
-To run the Dart static analyzer and verify code style against linting rules:
-
-```bash
-flutter analyze
-```
-
----
-
-## 📡 API Overview
-
-The app connects to the One Support REST API backend:
-
-| Method | Endpoint | Description |
+| Role | Scope | Permissions |
 | :--- | :--- | :--- |
-| `POST` | `/api/v1/Account/login` | Authenticate user and retrieve JWT session token |
-| `POST` | `/api/v1/Account/register` | Register a new user account |
-| `GET` | `/api/v1/tickets` | Fetch paginated tickets with status, priority, and search filters |
-| `GET` | `/api/v1/tickets/{id}` | Retrieve comprehensive ticket details by ID |
-| `POST` | `/api/v1/tickets` | Submit a new support ticket |
-| `PATCH`| `/api/v1/tickets/{id}/status` | Update ticket status (e.g., Close, Reopen, Resolve) |
-| `GET` | `/api/v1/tickets/{ticketId}/comments` | Retrieve chronological comment thread |
-| `POST` | `/api/v1/tickets/{ticketId}/comments` | Post a new comment on a ticket |
-| `GET` | `/api/v1/tickets/{ticketId}/activities`| Retrieve ticket audit trail history |
+| **Customer** | Own Resources | Can create support tickets, view personal tickets, post comments, and close/reopen their own tickets. |
+| **Support Agent** | Assigned Tickets | Can view assigned tickets, respond via comments, and mark tickets as resolved. |
+| **Admin** | Global System | Can view all system tickets, assign agents, and update tickets to any lifecycle status. |
 
 ---
 
-## 🤝 Contributing
+## 10. Notification System
 
-Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Push notifications are powered by **Firebase Cloud Messaging (FCM)** via `FirebaseMessagingService`.
 
-1. **Fork the Project**
-2. **Create your Feature Branch**:
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. **Commit your Changes**:
-   ```bash
-   git commit -m "feat: Add amazing feature"
-   ```
-4. **Push to the Branch**:
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-5. **Open a Pull Request**
+```mermaid
+sequenceDiagram
+    participant App as Flutter App
+    participant FCM as Firebase Messaging
+    participant Handler as Background Handler
 
-### Commit Message Guidelines
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
-* `feat:` A new feature
-* `fix:` A bug fix
-* `docs:` Documentation only changes
-* `style:` Changes that do not affect the meaning of the code
-* `refactor:` A code change that neither fixes a bug nor adds a feature
-* `test:` Adding missing tests or correcting existing tests
+    App->>FCM: initialize() & requestPermission()
+    FCM-->>App: Permission Status & FCM Token
+    App->>FCM: onTokenRefresh listener
+    
+    Note over FCM,App: Foreground Message
+    FCM->>App: onMessage event received
+    
+    Note over FCM,Handler: Background / Terminated Message
+    FCM->>Handler: firebaseMessagingBackgroundHandler(message)
+```
+
+- **Permission Handling**: Automatically requests notification permissions on startup.
+- **Background Execution**: Background messages are processed via `@pragma('vm:entry-point')` in `main.dart`.
+- **Token Management**: Exposes `getToken()` and `onTokenRefresh` streams for backend synchronization.
 
 ---
 
-## 📄 License
+## 11. State Management
 
-Distributed under the MIT License. See `LICENSE` for more information.
+The application utilizes **BLoC / Cubit** (`flutter_bloc`) paired with **Freezed** for union state declarations:
+
+- `SplashCubit`: Manages initial session checks and routing.
+- `LoginCubit`: Handles login form validation, network submission, and token caching.
+- `RegisterCubit`: Manages user registration requests and form state.
+- `HomeCubit`: Controls ticket fetching, pagination, filter state, ticket creation, comments, and status modifications.
+- `ThemeCubit`: Manages dynamic switching between Light and Dark themes and persists preferences.
+- `LocalizationCubit`: Controls dynamic language switching between English and Arabic and persists preferences.
 
 ---
 
-<div align="center">
-  <sub>Built with ❤️ by the One Support Team</sub>
-</div>
+## 12. Networking
+
+The networking layer is built on **Dio** and **Retrofit**:
+
+- **Singleton Dio Client**: Configured in `DioFactory` with timeouts and JSON content headers.
+- **Logging Interceptor**: `PrettyDioLogger` logs headers, request bodies, and responses during debug mode.
+- **Authorization**: Dynamic bearer token injection via `DioFactory.setTokenIntoHeaderAfterLogin(token)`.
+- **Typed Error Handling**: Network responses are wrapped in `ApiResult<T>`, returning either `Success(data)` or `Failure(ErrorHandler)`.
+
+---
+
+## 13. Storage
+
+The application implements a multi-tier local storage strategy:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                       Storage Strategy                      │
+├──────────────────────────┬──────────────────────────────────┤
+│ flutter_secure_storage   │ JWT Access Tokens & Credentials  │
+├──────────────────────────┼──────────────────────────────────┤
+│ shared_preferences       │ Theme Mode, Language, Remember Me│
+├──────────────────────────┼──────────────────────────────────┤
+│ hive_ce                  │ High-Performance NoSQL Caching  │
+└──────────────────────────┴──────────────────────────────────┘
+```
+
+- **`SecureStorageService`**: Persists sensitive authorization tokens securely.
+- **`PreferencesService`**: Stores user settings, UI states, and theme/language preferences.
+- **`CacheService`**: Provides structured key-value box storage for offline data caching using Hive Community Edition.
+
+---
+
+## 14. Screenshots
+
+> Place application screenshots in an `assets/screenshots/` directory.
+
+| Login Screen | Tickets Dashboard | Ticket Details |
+| :---: | :---: | :---: |
+| *(Screenshot Placeholder)* | *(Screenshot Placeholder)* | *(Screenshot Placeholder)* |
+
+| Create Ticket | Activity Timeline | Dark Mode Overview |
+| :---: | :---: | :---: |
+| *(Screenshot Placeholder)* | *(Screenshot Placeholder)* | *(Screenshot Placeholder)* |
+
+---
+
+## 15. Contributing
+
+1. Fork the repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes following Conventional Commits:
+   ```bash
+   git commit -m "feat: add support ticket priority indicator"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a Pull Request.
+
+---
+
+## 16. Future Improvements
+
+- File and image attachment uploads for tickets and comments.
+- Real-time WebSocket support for live ticket comment streaming.
+- Full offline synchronization mode with automatic retry queues.
+- Biometric authentication (Fingerprint / Face ID).
+- In-app push notification inbox and preference management.
+
+---
+
+## 17. License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 18. Author
+
+**Ahmed Hosny**  
+EraaSoft Flutter Development Team  
+GitHub: [@a7medhosny](https://github.com/a7medhosny)
 
