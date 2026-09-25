@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -6,6 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../features/splash/presentation/cubit/splash_cubit.dart';
 import '../localization/cubit/localization_cubit.dart';
 import '../networking/dio_factory.dart';
+import '../services/firebase_messaging_service.dart';
+import '../services/firebase_messaging_service_impl.dart';
 import '../storage/cache/cache_service.dart';
 import '../storage/cache/cache_service_impl.dart';
 import '../storage/preferences/preferences_service.dart';
@@ -55,6 +58,14 @@ Future<void> init() async {
   final cacheService = CacheServiceImpl();
   await cacheService.init();
   getIt.registerLazySingleton<CacheService>(() => cacheService);
+
+  // Messaging Service
+
+  final firebaseMessaging = FirebaseMessaging.instance;
+  
+  getIt.registerLazySingleton<FirebaseMessagingService>(
+    () => FirebaseMessagingServiceImpl(firebaseMessaging),
+  );
 
   // Localization & Theme
   getIt.registerLazySingleton<LocalizationCubit>(
