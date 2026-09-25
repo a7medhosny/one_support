@@ -108,6 +108,12 @@ class _TicketDetailsBottomSheetState extends State<TicketDetailsBottomSheet>
               _isLoadingComments = false;
             });
           },
+          getTicketCommentsLoading: () {
+            setState(() {
+              _isLoadingComments = true;
+            });
+          },
+
           getTicketCommentsFailure: (_) {
             setState(() {
               _isLoadingComments = false;
@@ -119,6 +125,13 @@ class _TicketDetailsBottomSheetState extends State<TicketDetailsBottomSheet>
               _isLoadingActivities = false;
             });
           },
+
+          getTicketActivitiesLoading: () {
+            setState(() {
+              _isLoadingActivities = true;
+            });
+          },
+
           getTicketActivitiesFailure: (_) {
             setState(() {
               _isLoadingActivities = false;
@@ -292,6 +305,17 @@ class _TicketDetailsBottomSheetState extends State<TicketDetailsBottomSheet>
                       verticalSpace(20),
                       // Tab Bar for Comments & Activities
                       TabBar(
+                        onTap: (index) {
+                          if (index == 0) {
+                            context
+                                .read<HomeCubit>()
+                                .getTicketComments(widget.ticket.id);
+                          } else if (index == 1) {
+                            context
+                                .read<HomeCubit>()
+                                .getTicketActivities(widget.ticket.id);
+                          }
+                        },
                         controller: _tabController,
                         labelColor: colorScheme.primary,
                         unselectedLabelColor: colorScheme.onSurfaceVariant,
